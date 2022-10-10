@@ -65,9 +65,5 @@
             <artifactId>log4j-1.2-api</artifactId>
             <version>2.2</version>
         </dependency>
-
-
     </dependencies>
-
-
 </project>
