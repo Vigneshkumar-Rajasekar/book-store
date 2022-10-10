@@ -38,7 +38,6 @@ public class OrderEntry {
 
         } catch (Exception e){
             LOG.info("Exception occurred in main {}",e.getMessage());
-            e.printStackTrace();
         }
     }
 }
