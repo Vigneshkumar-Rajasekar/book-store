@@ -23,7 +23,7 @@ public class CheckoutServiceImpl extends DiscountService {
     private CheckoutService checkoutService;
 
     /**
-     * Mocking constructor parameter
+     * Constructor for mocking
      */
     public CheckoutServiceImpl(CheckoutService checkoutService) {
         this.checkoutService = checkoutService;
