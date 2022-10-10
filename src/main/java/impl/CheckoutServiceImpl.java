@@ -2,6 +2,7 @@ package impl;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import model.Book;
+import org.json.JSONException;
 import shared.Constant;
 import org.json.JSONArray;
 import org.slf4j.Logger;
@@ -40,10 +41,14 @@ public class CheckoutServiceImpl extends DiscountService {
             if (orderDetail != null && orderDetail.length() > 0) {
                 Book bookObj;
                 for (int i = 0; i < orderDetail.length(); i++) {
-                    bookObj = new ObjectMapper().readValue(orderDetail.getString(i), Book.class);
-                    bookObj.setPrice(DBManager.getBookRepo().getJSONObject(bookObj.getName()).getDouble(Constant.BOOK_KEY_PRICE));
-                    bookObj.setYear(DBManager.getBookRepo().getJSONObject(bookObj.getName()).getInt(Constant.BOOK_KEY_YEAR));
-                    totalOrderCost += calculateBookDiscount(bookObj);
+                    try{
+                        bookObj = new ObjectMapper().readValue(orderDetail.getString(i), Book.class);
+                        bookObj.setPrice(DBManager.getBookRepo().getJSONObject(bookObj.getName()).getDouble(Constant.BOOK_KEY_PRICE));
+                        bookObj.setYear(DBManager.getBookRepo().getJSONObject(bookObj.getName()).getInt(Constant.BOOK_KEY_YEAR));
+                        totalOrderCost += calculateBookDiscount(bookObj);
+                    } catch (JSONException e){
+                        LOG.error("Exception occurred on using Book object",e.getStackTrace());
+                    }
                 }
             }
             Constant.dblFormat.setRoundingMode(RoundingMode.DOWN);
@@ -51,8 +56,11 @@ public class CheckoutServiceImpl extends DiscountService {
                     .append(Constant.dblFormat.format(calculateTotalCostDiscount(totalOrderCost)))
                     .toString();
         } catch (Exception e) {
+            e.printStackTrace();
             LOG.error("Exception occurred in proceedToCheckout {}",e.getStackTrace());
+        } finally {
+            return result;
         }
-        return result;
+
     }
 }
