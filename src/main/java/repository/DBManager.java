@@ -1,8 +1,11 @@
 package repository;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import shared.Constant;
 import org.json.JSONObject;
 
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
@@ -12,6 +15,7 @@ import java.nio.file.Paths;
  */
 public class DBManager {
 
+    private static Logger LOG = LoggerFactory.getLogger(DBManager.class);
     public static JSONObject bookRepo;
 
     /**
@@ -20,8 +24,11 @@ public class DBManager {
     public static void loadBookDetails() {
         try{
             bookRepo = new JSONObject(new String(Files.readAllBytes(Paths.get(Constant.BOOK_REPO))));
-        } catch (Exception e){
-            e.printStackTrace();
+        } catch (IOException e){
+            LOG.error("File Exception in loading book details {} ",e.getStackTrace());
+        }
+        catch (Exception e){
+            LOG.error("Exception in loading book details {} ",e.getStackTrace());
         }
     }
 
