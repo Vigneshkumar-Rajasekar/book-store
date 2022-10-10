@@ -1,6 +1,7 @@
 package service;
 
 import model.Book;
+import shared.Constant;
 
 /**
  * Discount class that handles discounts and offers of the books and orders
@@ -12,7 +13,7 @@ public class DiscountService {
      * All books published after 2000 have 10% discount
      */
     public int bookDiscount(int year){
-        return (year > 2000) ? 10 : 0;
+        return (year > Constant.DISCOUNT_BOOK_YEAR) ? Constant.BOOK_DISCOUNT_PERCENT : 0;
     }
 
     /**
@@ -35,7 +36,8 @@ public class DiscountService {
      * Buy books worth more than £30 in total, get a 5% discount on the total
      */
     public double calculateTotalCostDiscount(double totalCost) {
-        return (totalCost > 30) ? ( totalCost - (totalCost * (getPercentage(5))) ) : totalCost;
+        return (totalCost > Constant.DISCOUNT_TOTAL_AMOUNT) ?
+                ( totalCost - (totalCost * (getPercentage(Constant.ORDER_DISCOUNT_PERCENT))) ) : totalCost;
     }
 
     /**

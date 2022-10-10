@@ -12,6 +12,10 @@ public class Constant {
     public static final String POUND_CURRENCY_SYMBOL = "£";
     public static final String BOOK_KEY_PRICE = "price";
     public static final String BOOK_KEY_YEAR = "year";
+    public static final int ORDER_DISCOUNT_PERCENT = 5;
+    public static final int BOOK_DISCOUNT_PERCENT = 10;
+    public static final int DISCOUNT_BOOK_YEAR = 2000;
+    public static final int DISCOUNT_TOTAL_AMOUNT = 30;
     public static final DecimalFormat dblFormat = new DecimalFormat("0.00");
 
     /**
