@@ -1,0 +1,57 @@
+{
+  "Moby Dick": {
+    "name": "Moby Dick",
+    "year": 1851,
+    "price": 15.20
+  },
+  "The Terrible Privacy of Maxwell Sim": {
+    "name": "The Terrible Privacy of Maxwell Sim",
+    "year": 2010,
+    "price": 13.14
+  },
+  "Still Life With Woodpecker": {
+    "name": "Still Life With Woodpecker",
+    "year": 1980,
+    "price": 11.05
+  },
+  "Sleeping Murder": {
+    "name": "Sleeping Murder",
+    "year": 1976,
+    "price": 10.24
+  },
+  "Three Men in a Boat": {
+    "name": "Three Men in a Boat",
+    "year": 1889,
+    "price": 12.87
+  },
+  "The Time Machine": {
+    "name": "The Time Machine",
+    "year": 1895,
+    "price": 10.43
+  },
+  "The Caves of Steel": {
+    "name": "The Caves of Steel",
+    "year": 1954,
+    "price": 8.12
+  },
+  "Idle Thoughts of an Idle Fellow": {
+    "name": "Idle Thoughts of an Idle Fellow",
+    "year": 1886,
+    "price": 7.32
+  },
+  "A Christmas Carol": {
+    "name": "A Christmas Carol",
+    "year": 1843,
+    "price": 4.23
+  },
+  "A Tale of Two Cities": {
+    "name": "A Tale of Two Cities",
+    "year": 1859,
+    "price": 6.32
+  },
+  "Great Expectations": {
+    "name": "Great Expectations",
+    "year": 1861,
+    "price": 13.21
+  }
+}
