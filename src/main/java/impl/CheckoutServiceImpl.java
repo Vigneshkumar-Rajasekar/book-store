@@ -56,7 +56,6 @@ public class CheckoutServiceImpl extends DiscountService {
                     .append(Constant.dblFormat.format(calculateTotalCostDiscount(totalOrderCost)))
                     .toString();
         } catch (Exception e) {
-            e.printStackTrace();
             LOG.error("Exception occurred in proceedToCheckout {}",e.getStackTrace());
         } finally {
             return result;
