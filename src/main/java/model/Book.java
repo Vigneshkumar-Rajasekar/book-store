@@ -2,6 +2,7 @@ package model;
 
 /**
  * Added Book pojo class to hold the book details
+ * @author Vigneshkumar
  */
 public class Book {
 
